@@ -12,9 +12,9 @@ import HeaderStyleInterpolator from './HeaderStyleInterpolator';
 
 import type {
   NavigationScene,
-  NavigationStyleInterpolator,
-  LayoutEvent,
-  HeaderProps,
+    NavigationStyleInterpolator,
+    LayoutEvent,
+    HeaderProps,
 } from '../../TypeDefinition';
 
 type SceneProps = {
@@ -23,7 +23,7 @@ type SceneProps = {
   progress: Animated.Value,
 };
 
-type SubViewRenderer<T> = (props: SceneProps) => ?React.Element<T>;
+type SubViewRenderer<T> = (props: SceneProps) =>?React.Element<T>;
 
 type SubViewName = 'left' | 'title' | 'right';
 
@@ -97,13 +97,13 @@ class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
     const onLayoutIOS =
       Platform.OS === 'ios'
         ? (e: LayoutEvent) => {
-            this.setState({
-              widths: {
-                ...this.state.widths,
-                [props.scene.key]: e.nativeEvent.layout.width,
-              },
-            });
-          }
+          this.setState({
+            widths: {
+              ...this.state.widths,
+              [props.scene.key]: e.nativeEvent.layout.width,
+            },
+          });
+        }
         : undefined;
 
     return (
@@ -259,11 +259,11 @@ class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
     if (this.props.mode === 'float') {
       const scenesProps: Array<
         SceneProps
-      > = this.props.scenes.map((scene: NavigationScene) => ({
-        position: this.props.position,
-        progress: this.props.progress,
-        scene,
-      }));
+        > = this.props.scenes.map((scene: NavigationScene) => ({
+          position: this.props.position,
+          progress: this.props.progress,
+          scene,
+        }));
       appBar = scenesProps.map(this._renderHeader, this);
     } else {
       appBar = this._renderHeader({
@@ -299,7 +299,7 @@ let platformContainerStyles;
 if (Platform.OS === 'ios') {
   platformContainerStyles = {
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: 'rgba(0, 0, 0, .3)',
+    borderBottomColor: '#F3F3F3',
   };
 } else {
   platformContainerStyles = {

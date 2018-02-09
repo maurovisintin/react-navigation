@@ -6,11 +6,11 @@ import TabBarIcon from './TabBarIcon';
 
 import type {
   NavigationAction,
-  NavigationRoute,
-  NavigationState,
-  NavigationScreenProp,
-  ViewStyleProp,
-  TextStyleProp,
+    NavigationRoute,
+    NavigationState,
+    NavigationScreenProp,
+    ViewStyleProp,
+    TextStyleProp,
 } from '../../TypeDefinition';
 
 import type { TabScene } from './TabView';
@@ -31,7 +31,7 @@ type Props = {
   position: Animated.Value,
   navigation: NavigationScreenProp<NavigationState, NavigationAction>,
   jumpToIndex: (index: number) => void,
-  getLabel: (scene: TabScene) => ?(React.Element<*> | string),
+  getLabel: (scene: TabScene) =>?(React.Element<*> | string),
   getOnPress: (
     scene: TabScene
   ) => (scene: TabScene, jumpToIndex: (index: number) => void) => void,
@@ -47,7 +47,7 @@ export default class TabBarBottom extends PureComponent<
   DefaultProps,
   Props,
   void
-> {
+  > {
   // See https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/UIKitUICatalog/UITabBar.html
   static defaultProps = {
     activeTintColor: '#3478f6', // Default active tint color in iOS 10
@@ -184,10 +184,10 @@ export default class TabBarBottom extends PureComponent<
 
 const styles = StyleSheet.create({
   tabBar: {
-    height: 49, // Default tab bar height in iOS 10
+    height: 54, // Default tab bar height in iOS 10
     flexDirection: 'row',
     borderTopWidth: StyleSheet.hairlineWidth,
-    borderTopColor: 'rgba(0, 0, 0, .3)',
+    borderTopColor: '#F3F3F3',
     backgroundColor: '#F7F7F7', // Default background color in iOS 10
   },
   tab: {
